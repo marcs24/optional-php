@@ -1,0 +1,19 @@
+{
+    "name": "utils/optional",
+    "description": "easy access on arrays and objects",
+    "type": "library",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Utils\\": "src/",
+            "Utils\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-cov": "phpunit --coverage-html html"
+    }
+}
