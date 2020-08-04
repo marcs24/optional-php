@@ -85,9 +85,14 @@ class Optional implements \ArrayAccess
         return $this->value;
     }
 
-    public function get()
+    public function isEmpty() : bool
     {
-        return $this->chainWasBroken() ? null : $this->value;
+        return empty($this->get());
+    }
+
+    public function isNotEmpty() : bool
+    {
+        return !$this->isEmpty();
     }
 
     public function offsetExists($offset) : bool
