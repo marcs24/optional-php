@@ -1,8 +1,12 @@
 {
-    "name": "utils/optional",
-    "description": "easy access on arrays and objects",
+    "name": "optional/optional-php",
+    "description": "wrapper to comfortable access on arrays/object attributes and methods that may not exist",
+    "license": "MIT",
     "type": "library",
-    "require": {},
+    "keywords": ["optional","stablecode", "utils"],
+    "require": {
+        "php": "^7.1"
+    },
     "require-dev": {
         "phpunit/phpunit": "^8.0"
     },
@@ -14,6 +18,6 @@
     },
     "scripts": {
         "test": "phpunit",
-        "test-cov": "phpunit --coverage-html html"
+        "test-cov": "phpunit --coverage-html coverage-html"
     }
 }
