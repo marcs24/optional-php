@@ -1,2 +1,4 @@
 vendor
+coverage-html
 .idea
+.phpunit.result.cache
