@@ -68,6 +68,15 @@ class Optional implements \ArrayAccess
         return empty($this->errors);
     }
 
+    public function get(callable $callback = null)
+    {
+        $value = $this->chainWasBroken() ? null : $this->value;
+        if ($callback != null) {
+            return $callback($value);
+        }
+        return $value;
+    }
+
     public function orElseGet($value)
     {
         if ($this->chainWasBroken()) {

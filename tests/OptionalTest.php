@@ -79,5 +79,16 @@ class OptionalTest extends TestCase
             // do nothing
         })->orElseGet(5));
     }
+
+    /**
+     * @test
+     */
+    public function getCallCallbackIfFunctionIsGiven() {
+        $object = new \stdClass();
+        $object->b = 5;
+        $this->assertEquals([5], Optional::of($object)->b->get(function($value) {
+           return [$value];
+        }));
+    }
 }
 

@@ -70,4 +70,54 @@ class OptionalAttributeTest extends TestCase
 
         $this->assertEquals(null, Optional::of($objectA)->objectD->objectC->result->get());
     }
+
+    /**
+     * @test
+     */
+    public function isEmptyIfValueContainsEmptyArray()
+    {
+        $objectA = new \stdClass();
+        $objectB = new \stdClass();
+
+        $objectB->empytArray = [];
+        $objectA->objectB = $objectB;
+
+        $this->assertTrue(Optional::of($objectA)->objectD->emptyArray->isEmpty());
+    }
+
+    /**
+     * @test
+     */
+    public function isEmptyIfValueIsNULL()
+    {
+        $object = new \stdClass();
+        $this->assertTrue(Optional::of($object)->something->isEmpty());
+    }
+
+    /**
+     * @test
+     */
+    public function isEmptyReturnsFalseIfValueIsGiven()
+    {
+        $object = new \stdClass();
+        $object->result = "hello world";
+        $this->assertFalse(Optional::of($object)->result->isEmpty());
+    }
+
+    /**
+     * @test
+     */
+    public function isNotEmptyReturnsTrueIfValueIsGiven() {
+        $object = new \stdClass();
+        $object->result = "hello world";
+        $this->assertTrue(Optional::of($object)->result->isNotEmpty());
+    }
+
+    /**
+     * @test
+     */
+    public function isNotEmptyReturnsFalseIfValueNotIsGiven() {
+        $object = new \stdClass();
+        $this->assertFalse(Optional::of($object)->result->isNotEmpty());
+    }
 }
