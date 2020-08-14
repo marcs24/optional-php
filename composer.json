@@ -10,6 +10,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
+        "phpstan/phpstan": "^0.12.0"
     },
     "autoload": {
         "psr-4": {
@@ -19,6 +20,7 @@
     },
     "scripts": {
         "test": "phpunit",
+        "phpstan": "phpstan analyse src tests",
         "test-cov": "phpunit --coverage-html coverage-html"
     }
 }
