@@ -2,3 +2,4 @@ vendor
 coverage-html
 .idea
 .phpunit.result.cache
+composer.lock
