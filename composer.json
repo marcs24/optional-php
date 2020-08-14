@@ -4,6 +4,7 @@
     "license": "MIT",
     "type": "library",
     "keywords": ["optional","stablecode", "utils"],
+    "version": "0.1.0",
     "require": {
         "php": "^7.1"
     },
