@@ -3,8 +3,8 @@
     "description": "wrapper to comfortable access on arrays/object attributes and methods that may not exist",
     "license": "MIT",
     "type": "library",
-    "keywords": ["optional","stablecode", "utils"],
-    "version": "0.1.0",
+    "keywords": ["optional","stablecode", "utils", "safeaccess"],
+    "version": "0.2.0",
     "require": {
         "php": "^7.1"
     },
