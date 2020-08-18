@@ -90,5 +90,41 @@ class OptionalTest extends TestCase
            return [$value];
         }));
     }
+
+    /**
+     * @test
+     */
+    public function isEquals() {
+        $object = new \stdClass();
+        $object->result = "123";
+        $this->assertTrue(Optional::of($object)->result->equals("123"));
+    }
+
+    /**
+     * @test
+     */
+    public function numberIsEqualString() {
+        $object = new \stdClass();
+        $object->result = "123";
+        $this->assertTrue(Optional::of($object)->result->equals(123));
+    }
+
+    /**
+     * @test
+     */
+    public function isNotEquals() {
+        $object = new \stdClass();
+        $object->result = "1234";
+        $this->assertFalse(Optional::of($object)->result->equals("123"));
+    }
+
+    /**
+     * @test
+     */
+    public function numberIsNotEqualStringIfStrict() {
+        $object = new \stdClass();
+        $object->result = "123";
+        $this->assertFalse(Optional::of($object)->result->equals(123, true));
+    }
 }
 

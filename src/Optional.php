@@ -95,6 +95,14 @@ class Optional implements \ArrayAccess
         return !$this->isEmpty();
     }
 
+    public function equals($value, $strict = false) : bool
+    {
+        if ($strict) {
+            return $this->get() === $value;
+        }
+        return $this->get() == $value;
+    }
+
     public function offsetExists($offset) : bool
     {
         return is_array($this->value) && isset($this->value[$offset]);
