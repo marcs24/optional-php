@@ -63,6 +63,7 @@ Optional::of($example)->a->b()->c->orElseGet(5); //will return 5
 | `orElseGet($value)` | returns the value if exist not return the given value |
 | `isEmpty() : bool` | is the value empty |
 | `isNotEmpty() : bool` | is the value not empty |
+| `equals($value, $strict = false) : bool` | check if $value is equal, $strict checks also type |
 | `getErrors() : array` | return an array of errors if the object was broken |
 | `printErrors() : string` | print all errors |
 | `log(callable $loggingFunction = null) : Optional` | if no callback is given it will print all errors. callback(Optional $this) |
